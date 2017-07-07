@@ -74,7 +74,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="杂谈," />
+  <meta name="keywords" content="leetcode-easy," />
 
 
 
@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="&amp;emsp;&amp;emsp;今天突然对人脸识别有点感兴趣，搜搜搜发现Android上竟然有自带的人脸识别API可用，不过应该是不太精准，发现了opencv这个库，图像处理还是挺有意思的，再看几天教程琢磨琢磨看能不能做出点东西来玩玩。还去吃了烤肉哈哈哈好撑好撑，明天周一又要上班啦，加油。">
-<meta name="keywords" content="杂谈">
+<meta name="description" content="Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must be replaced with another c">
+<meta name="keywords" content="leetcode-easy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闲来无事">
-<meta property="og:url" content="http://yoursite.com/2017/07/02/闲来无事/index.html">
+<meta property="og:title" content="Isomorphic Strings">
+<meta property="og:url" content="http://yoursite.com/2017/07/07/Isomorphic Strings/index.html">
 <meta property="og:site_name" content="Life is too short">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;今天突然对人脸识别有点感兴趣，搜搜搜发现Android上竟然有自带的人脸识别API可用，不过应该是不太精准，发现了opencv这个库，图像处理还是挺有意思的，再看几天教程琢磨琢磨看能不能做出点东西来玩玩。还去吃了烤肉哈哈哈好撑好撑，明天周一又要上班啦，加油。">
-<meta property="og:updated_time" content="2017-07-02T15:16:32.531Z">
+<meta property="og:description" content="Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must be replaced with another c">
+<meta property="og:updated_time" content="2017-07-07T15:09:21.005Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闲来无事">
-<meta name="twitter:description" content="&amp;emsp;&amp;emsp;今天突然对人脸识别有点感兴趣，搜搜搜发现Android上竟然有自带的人脸识别API可用，不过应该是不太精准，发现了opencv这个库，图像处理还是挺有意思的，再看几天教程琢磨琢磨看能不能做出点东西来玩玩。还去吃了烤肉哈哈哈好撑好撑，明天周一又要上班啦，加油。">
+<meta name="twitter:title" content="Isomorphic Strings">
+<meta name="twitter:description" content="Given two strings s and t, determine if they are isomorphic. Two strings are isomorphic if the characters in s can be replaced to get t. All occurrences of a character must be replaced with another c">
 
 
 
@@ -128,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/02/闲来无事/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/07/Isomorphic Strings/"/>
 
 
 
 
 
-  <title>闲来无事 | Life is too short</title>
+  <title>Isomorphic Strings | Life is too short</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/02/闲来无事/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/07/Isomorphic Strings/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -291,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闲来无事</h1>
+          <h1 class="post-title" itemprop="name headline">Isomorphic Strings</h1>
         
 
         <div class="post-meta">
@@ -303,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T23:15:17+08:00">
-                2017-07-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T23:09:32+08:00">
+                2017-07-07
               </time>
             
 
@@ -326,8 +326,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/杂谈/" itemprop="url" rel="index">
-                    <span itemprop="name">杂谈</span>
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
                   </a>
                 </span>
 
@@ -361,8 +361,17 @@
 
       
         <hr>
-<p>&emsp;&emsp;今天突然对人脸识别有点感兴趣，搜搜搜发现Android上竟然有自带的人脸识别API可用，不过应该是不太精准，发现了opencv这个库，图像处理还是挺有意思的，再看几天教程琢磨琢磨看能不能做出点东西来玩玩。还去吃了烤肉哈哈哈好撑好撑，明天周一又要上班啦，加油。</p>
+<p>Given two strings <strong>s</strong> and <strong>t</strong>, determine if they are isomorphic.</p>
+<p>Two strings are isomorphic if the characters in <strong>s</strong> can be replaced to get <strong>t</strong>.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character but a character may map to itself.</p>
+<p>For example,<br>Given <code>&quot;egg&quot;</code>, <code>&quot;add&quot;</code>, return true.</p>
+<p>Given <code>&quot;foo&quot;</code>, <code>&quot;bar&quot;</code>, return false.</p>
+<p>Given <code>&quot;paper&quot;</code>, <code>&quot;title&quot;</code>, return true.</p>
+<p><strong>Note:</strong><br>You may assume both <strong>s</strong> and <strong>t</strong> have the same length.</p>
 <hr>
+<p>Solution:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isIsomorphic</span><span class="params">(String s, String t)</span> </span>&#123; </div><div class="line">        <span class="keyword">int</span> compare[] = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">512</span>];</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;s.length(); i++) &#123;</div><div class="line">            <span class="keyword">if</span> (compare[s.charAt(i)] != compare[t.charAt(i)+<span class="number">256</span>]) </div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            compare[s.charAt(i)] = compare[t.charAt(i)+<span class="number">256</span>] = i + <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>思想：位置相同的字母占据同样的槽（512分为两个256槽，一共256个ASCII码值），相同位置的槽的值不同时即是两个字符串出现了不匹配的情况。</p>
 
       
     </div>
@@ -392,7 +401,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂谈/" rel="tag"># 杂谈</a>
+            <a href="/tags/leetcode-easy/" rel="tag"># leetcode-easy</a>
           
         </div>
       
@@ -405,8 +414,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/02/生活需要记录/" rel="next" title="生活需要记录">
-                <i class="fa fa-chevron-left"></i> 生活需要记录
+              <a href="/2017/07/06/Path Sum/" rel="next" title="Path Sum">
+                <i class="fa fa-chevron-left"></i> Path Sum
               </a>
             
           </div>
@@ -414,10 +423,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/03/Java与线程/" rel="prev" title="Java与线程">
-                Java与线程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
