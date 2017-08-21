@@ -274,7 +274,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/07/Unique-Paths/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/21/Pascals-Triangle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -293,7 +293,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/07/Unique-Paths/" itemprop="url">Unique Paths</a></h1>
+                <a class="post-title-link" href="/2017/08/21/Pascals-Triangle/" itemprop="url">Pascal's Triangle</a></h1>
         
 
         <div class="post-meta">
@@ -305,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-07T20:30:15+08:00">
-                2017-08-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-21T22:56:20+08:00">
+                2017-08-21
               </time>
             
 
@@ -365,14 +365,12 @@
         
           
             <hr>
-<p>A robot is located at the top-left corner of a <em>m</em> x <em>n</em> grid (marked ‘Start’ in the diagram below).</p>
-<p>The robot can only move either down or right at any point in time. The robot is trying to reach the bottom-right corner of the grid (marked ‘Finish’ in the diagram below).</p>
-<p>How many possible unique paths are there?</p>
-<p><img src="img/leetcode_Unique_Paths.png" alt="img"></p>
-<p>Above is a 3 x 7 grid. How many possible unique paths are there?</p>
+<p>Given <em>numRows</em>, generate the first <em>numRows</em> of Pascal’s triangle.</p>
+<p>For example, given <em>numRows</em> = 5,<br>Return</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">     [1],</div><div class="line">    [1,1],</div><div class="line">   [1,2,1],</div><div class="line">  [1,3,3,1],</div><div class="line"> [1,4,6,4,1]</div><div class="line">]</div></pre></td></tr></table></figure>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(m==<span class="number">0</span> || n==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>; </div><div class="line">        <span class="keyword">if</span>(m==<span class="number">1</span> || n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="comment">//return uniquePaths(m-1,n) + uniquePaths(m,n-1); </span></div><div class="line">        </div><div class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++) dp[i][<span class="number">0</span>] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) dp[<span class="number">0</span>][i] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;m; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;n; j++) &#123;</div><div class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j] + dp[i][j-<span class="number">1</span>];</div><div class="line">            &#125;</div><div class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>];</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; generate(<span class="keyword">int</span> numRows) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; triangle = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        List&lt;Integer&gt; row = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;numRows;i++) &#123;</div><div class="line">            row.add(<span class="number">0</span>,<span class="number">1</span>);</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>; j&lt;row.size()-<span class="number">1</span>;j++) &#123;</div><div class="line">                row.set(j,row.get(j)+row.get(j+<span class="number">1</span>));</div><div class="line">            &#125;</div><div class="line">            triangle.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(row));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> triangle;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -416,7 +414,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/06/Merge-Intervals/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/Convert-Sorted-Array-to-Binary-Search-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -435,7 +433,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/06/Merge-Intervals/" itemprop="url">Merge Intervals</a></h1>
+                <a class="post-title-link" href="/2017/08/20/Convert-Sorted-Array-to-Binary-Search-Tree/" itemprop="url">Convert Sorted Array to Binary Search Tree</a></h1>
         
 
         <div class="post-meta">
@@ -447,8 +445,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-06T22:15:52+08:00">
-                2017-08-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T23:30:20+08:00">
+                2017-08-20
               </time>
             
 
@@ -507,11 +505,10 @@
         
           
             <hr>
-<p>Given a collection of intervals, merge all overlapping intervals.</p>
-<p>For example,<br>Given <code>[1,3],[2,6],[8,10],[15,18]</code>,<br>return <code>[1,6],[8,10],[15,18]</code>.</p>
+<p>Given an array where elements are sorted in ascending order, convert it to a height balanced BST.</p>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for an interval.</div><div class="line"> * public class Interval &#123;</div><div class="line"> *     int start;</div><div class="line"> *     int end;</div><div class="line"> *     Interval() &#123; start = 0; end = 0; &#125;</div><div class="line"> *     Interval(int s, int e) &#123; start = s; end = e; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Interval&gt; <span class="title">merge</span><span class="params">(List&lt;Interval&gt; intervals)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(intervals.size()&lt;=<span class="number">1</span>) <span class="keyword">return</span> intervals;</div><div class="line">        intervals.sort((o1,o2)-&gt;Integer.compare(o1.start,o2.start));</div><div class="line">        <span class="keyword">int</span> start = intervals.get(<span class="number">0</span>).start;</div><div class="line">        <span class="keyword">int</span> end = intervals.get(<span class="number">0</span>).end;</div><div class="line">        List&lt;Interval&gt; res = <span class="keyword">new</span> ArrayList&lt;Interval&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;intervals.size();i++) &#123;</div><div class="line">            <span class="keyword">if</span>(intervals.get(i).start &lt;= end) &#123;</div><div class="line">                end = Math.max(end,intervals.get(i).end);</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                res.add(<span class="keyword">new</span> Interval(start,end));</div><div class="line">                start = intervals.get(i).start;</div><div class="line">                end = intervals.get(i).end;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        res.add(<span class="keyword">new</span> Interval(start,end)); </div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">sortedArrayToBST</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(nums.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</div><div class="line">        <span class="keyword">return</span> helper(nums,<span class="number">0</span>,nums.length-<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">helper</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> head = l + (r-l) / <span class="number">2</span>;</div><div class="line">        TreeNode node = <span class="keyword">new</span> TreeNode(nums[head]);</div><div class="line">        <span class="keyword">if</span>(l == r)  <span class="keyword">return</span> node;</div><div class="line">        <span class="keyword">if</span>(head-l&gt;<span class="number">0</span>)</div><div class="line">            node.left = helper(nums,l,head-<span class="number">1</span>);</div><div class="line">        <span class="keyword">if</span>(nums.length-<span class="number">1</span>-head&gt;<span class="number">0</span>)</div><div class="line">            node.right = helper(nums,head+<span class="number">1</span>,r);</div><div class="line">        <span class="keyword">return</span> node;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -555,7 +552,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/05/Jump-Game/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Maximum-Depth-of-Binary-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -574,7 +571,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/05/Jump-Game/" itemprop="url">Jump Game</a></h1>
+                <a class="post-title-link" href="/2017/08/19/Maximum-Depth-of-Binary-Tree/" itemprop="url">Maximum Depth of Binary Tree</a></h1>
         
 
         <div class="post-meta">
@@ -586,8 +583,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T23:55:52+08:00">
-                2017-08-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T23:45:50+08:00">
+                2017-08-19
               </time>
             
 
@@ -646,14 +643,11 @@
         
           
             <hr>
-<p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p>
-<p>Each element in the array represents your maximum jump length at that position.</p>
-<p>Determine if you are able to reach the last index.</p>
-<p>For example:<br>A = <code>[2,3,1,1,4]</code>, return <code>true</code>.</p>
-<p>A = <code>[3,2,1,0,4]</code>, return <code>false</code>.</p>
+<p>Given a binary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canJump</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(i &gt; max) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            max = Math.max(nums[i]+i, max);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>+Math.max(maxDepth(root.left),maxDepth(root.right));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -697,7 +691,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/04/Spiral-Matrix/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/Binary-Tree-Zigzag-Level-Order-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -716,7 +710,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/04/Spiral-Matrix/" itemprop="url">Spiral Matrix</a></h1>
+                <a class="post-title-link" href="/2017/08/18/Binary-Tree-Zigzag-Level-Order-Traversal/" itemprop="url">Binary Tree Zigzag Level Order Traversal</a></h1>
         
 
         <div class="post-meta">
@@ -728,8 +722,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-04T22:35:22+08:00">
-                2017-08-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T22:35:32+08:00">
+                2017-08-18
               </time>
             
 
@@ -788,13 +782,14 @@
         
           
             <hr>
-<p>Given a matrix of <em>m</em> x <em>n</em> elements (<em>m</em> rows, <em>n</em> columns), return all elements of the matrix in spiral order.</p>
-<p>For example,<br>Given the following matrix:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line"> [ 1, 2, 3 ],</div><div class="line"> [ 4, 5, 6 ],</div><div class="line"> [ 7, 8, 9 ]</div><div class="line">]</div></pre></td></tr></table></figure>
-<p>You should return <code>[1,2,3,6,9,8,7,4,5]</code>.</p>
+<p>Given a binary tree, return the <em>zigzag level order</em> traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).</p>
+<p>For example:<br>Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  3</div><div class="line"> / \</div><div class="line">9  20</div><div class="line">  /  \</div><div class="line"> 15   7</div></pre></td></tr></table></figure>
+<p>return its zigzag level order traversal as:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [3],</div><div class="line">  [20,9],</div><div class="line">  [15,7]</div><div class="line">]</div></pre></td></tr></table></figure>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">spiralOrder</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</div><div class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">        <span class="keyword">if</span>(matrix == <span class="keyword">null</span> || matrix.length==<span class="number">0</span>) <span class="keyword">return</span> res;</div><div class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = matrix[<span class="number">0</span>].length-<span class="number">1</span>, top = <span class="number">0</span>, bottom = matrix.length-<span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(left &lt;= right &amp;&amp; top &lt;= bottom) &#123;</div><div class="line">            <span class="comment">//向右</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=left; i&lt;=right; i++) &#123;</div><div class="line">                res.add(matrix[top][i]);</div><div class="line">            &#125;</div><div class="line">            top++;</div><div class="line">            <span class="comment">//向下</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=top; i&lt;=bottom;i++) &#123;</div><div class="line">                res.add(matrix[i][right]);</div><div class="line">            &#125;</div><div class="line">            right--;</div><div class="line">            <span class="comment">//向左</span></div><div class="line">            <span class="keyword">if</span>(top&lt;=bottom) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=right; i&gt;=left; i--) &#123;</div><div class="line">                    res.add(matrix[bottom][i]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            bottom--;</div><div class="line">            <span class="comment">//向上</span></div><div class="line">            <span class="keyword">if</span>(left&lt;=right) &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=bottom;i&gt;=top;i--) &#123;</div><div class="line">                    res.add(matrix[i][left]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            left++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; zigzagLevelOrder(TreeNode root) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> res;</div><div class="line">        queue.offer(root);</div><div class="line">        <span class="keyword">boolean</span> change = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">while</span>(!queue.isEmpty())&#123;</div><div class="line">            <span class="keyword">int</span> size = queue.size();</div><div class="line">            List&lt;Integer&gt; sub = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</div><div class="line">                TreeNode node = queue.poll();</div><div class="line">                <span class="keyword">if</span>(change) &#123;</div><div class="line">                    sub.add(node.val);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    sub.add(<span class="number">0</span>,node.val);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) queue.offer(node.left);</div><div class="line">                <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>) queue.offer(node.right);</div><div class="line">            &#125;</div><div class="line">            res.add(sub);</div><div class="line">            change = !change;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -838,7 +833,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/03/Maximum-Subarray/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Binary-Tree-Level-Order-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -857,7 +852,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/03/Maximum-Subarray/" itemprop="url">Maximum Subarray</a></h1>
+                <a class="post-title-link" href="/2017/08/17/Binary-Tree-Level-Order-Traversal/" itemprop="url">Binary Tree Level Order Traversal</a></h1>
         
 
         <div class="post-meta">
@@ -869,8 +864,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-03T22:32:52+08:00">
-                2017-08-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T20:52:32+08:00">
+                2017-08-17
               </time>
             
 
@@ -929,11 +924,14 @@
         
           
             <hr>
-<p>Find the contiguous subarray within an array (containing at least one number) which has the largest sum.</p>
-<p>For example, given the array <code>[-2,1,-3,4,-1,2,1,-5,4]</code>,<br>the contiguous subarray <code>[4,-1,2,1]</code> has the largest sum = <code>6</code>.</p>
+<p>Given a binary tree, return the <em>level order</em> traversal of its nodes’ values. (ie, from left to right, level by level).</p>
+<p>For example:<br>Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  3</div><div class="line"> / \</div><div class="line">9  20</div><div class="line">  /  \</div><div class="line"> 15   7</div></pre></td></tr></table></figure>
+<p>return its level order traversal as:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [3],</div><div class="line">  [9,20],</div><div class="line">  [15,7]</div><div class="line">]</div></pre></td></tr></table></figure>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxSubArray</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> b=<span class="number">0</span>,max=nums[<span class="number">0</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(b&gt;=<span class="number">0</span>) b+=nums[i];</div><div class="line">            <span class="keyword">else</span> b = nums[i];</div><div class="line">            <span class="keyword">if</span>(b&gt;max)&#123;</div><div class="line">                max = b;</div><div class="line">            &#125; </div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> max;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</div><div class="line">        LinkedList&lt;TreeNode&gt; search = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> res;</div><div class="line">        search.add(root);</div><div class="line">        <span class="keyword">while</span>(!search.isEmpty())&#123;</div><div class="line">            <span class="keyword">int</span> currentSize = search.size();</div><div class="line">            List&lt;Integer&gt; subList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;currentSize;i++)&#123;</div><div class="line">                TreeNode node = search.poll();</div><div class="line">                subList.add(node.val);</div><div class="line">                <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) search.offer(node.left);</div><div class="line">                <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>) search.offer(node.right);</div><div class="line">            &#125;</div><div class="line">            res.add(subList);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -977,7 +975,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/Pow(x,-n)/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/16/Symmetric-Tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -996,7 +994,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/02/Pow(x,-n)/" itemprop="url">Pow(x, n)</a></h1>
+                <a class="post-title-link" href="/2017/08/16/Symmetric-Tree/" itemprop="url">Symmetric Tree</a></h1>
         
 
         <div class="post-meta">
@@ -1008,8 +1006,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T21:45:52+08:00">
-                2017-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-16T23:01:20+08:00">
+                2017-08-16
               </time>
             
 
@@ -1068,10 +1066,14 @@
         
           
             <hr>
-<p>Implement pow(<em>x</em>, <em>n</em>).</p>
+<p>Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).</p>
+<p>For example, this binary tree <code>[1,2,2,3,4,4,3]</code> is symmetric:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    1</div><div class="line">   / \</div><div class="line">  2   2</div><div class="line"> / \ / \</div><div class="line">3  4 4  3</div></pre></td></tr></table></figure>
+<p>But the following <code>[1,2,2,null,3,null,3]</code> is not:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  1</div><div class="line"> / \</div><div class="line">2   2</div><div class="line"> \   \</div><div class="line"> 3    3</div></pre></td></tr></table></figure>
+<p><strong>Note:</strong><br>Bonus points if you could solve it both recursively and iteratively.</p>
 <hr>
-<p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">myPow</span><span class="params">(<span class="keyword">double</span> x, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(x==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(x==-<span class="number">1</span>) <span class="keyword">return</span> (n%<span class="number">2</span>)==<span class="number">0</span>?<span class="number">1</span>:-<span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(n == Integer.MIN_VALUE) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">if</span>(n&lt;<span class="number">0</span>) &#123;</div><div class="line">            n = -n;</div><div class="line">            x = <span class="number">1</span>/x;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//return (n%2==0)? myPow(x*x,n/2):x*myPow(x*x,n/2);</span></div><div class="line">        </div><div class="line">        <span class="comment">//非递归、位运算</span></div><div class="line">        <span class="keyword">double</span> res = <span class="number">1</span>;</div><div class="line">        <span class="keyword">while</span>(n &gt; <span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>)==<span class="number">1</span>) res *= x;</div><div class="line">            x *= x;</div><div class="line">            n &gt;&gt;= <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isSymmetric</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">return</span> checkSymmetric(root.left,root.right);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">checkSymmetric</span><span class="params">(TreeNode left,TreeNode right)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(left==<span class="keyword">null</span> || right==<span class="keyword">null</span>) <span class="keyword">return</span> left==right;</div><div class="line">        <span class="keyword">if</span>(left.val != right.val) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">return</span> checkSymmetric(left.left,right.right) &amp;&amp; checkSymmetric(left.right,right.left);</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1115,7 +1117,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/01/Group-Anagrams/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/15/Binary-Tree-Inorder-Traversal/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -1134,7 +1136,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/08/01/Group-Anagrams/" itemprop="url">Group Anagrams</a></h1>
+                <a class="post-title-link" href="/2017/08/15/Binary-Tree-Inorder-Traversal/" itemprop="url">Binary Tree Inorder Traversal</a></h1>
         
 
         <div class="post-meta">
@@ -1146,8 +1148,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-01T22:25:36+08:00">
-                2017-08-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-15T21:32:20+08:00">
+                2017-08-15
               </time>
             
 
@@ -1206,13 +1208,14 @@
         
           
             <hr>
-<p>Given an array of strings, group anagrams together.</p>
-<p>For example, given: <code>[&quot;eat&quot;, &quot;tea&quot;, &quot;tan&quot;, &quot;ate&quot;, &quot;nat&quot;, &quot;bat&quot;]</code>,<br>Return:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [&quot;ate&quot;, &quot;eat&quot;,&quot;tea&quot;],</div><div class="line">  [&quot;nat&quot;,&quot;tan&quot;],</div><div class="line">  [&quot;bat&quot;]</div><div class="line">]</div></pre></td></tr></table></figure>
-<p><strong>Note:</strong> All inputs will be in lower-case.</p>
+<p>Given a binary tree, return the <em>inorder</em> traversal of its nodes’ values.</p>
+<p>For example:<br>Given binary tree <code>[1,null,2,3]</code>,</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">1</div><div class="line"> \</div><div class="line">  2</div><div class="line"> /</div><div class="line">3</div></pre></td></tr></table></figure>
+<p>return <code>[1,3,2]</code>.</p>
+<p><strong>Note:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; groupAnagrams(String[] strs) &#123;</div><div class="line">        <span class="keyword">if</span>(strs == <span class="keyword">null</span> ||strs.length == <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;();</div><div class="line">        HashMap&lt;String,List&lt;String&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;String,List&lt;String&gt;&gt;();</div><div class="line">        Arrays.sort(strs);</div><div class="line">        <span class="keyword">for</span>(String each : strs) &#123;</div><div class="line">            <span class="keyword">char</span>[] e = each.toCharArray();</div><div class="line">            Arrays.sort(e);</div><div class="line">            String s = String.valueOf(e);</div><div class="line">            <span class="keyword">if</span>(!map.containsKey(s)) </div><div class="line">                 map.put(s,<span class="keyword">new</span> ArrayList&lt;String&gt;());</div><div class="line">            </div><div class="line">            map.get(s).add(each);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ArrayList&lt;List&lt;String&gt;&gt;(map.values());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">        inOrder(res, root);</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">inOrder</span><span class="params">(List&lt;Integer&gt; res, TreeNode node)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(node != <span class="keyword">null</span>) &#123;</div><div class="line">            inOrder(res,node.left);</div><div class="line">            res.add(node.val);</div><div class="line">            inOrder(res,node.right);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1256,7 +1259,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/31/Rotate-Image/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/14/Merge-Sorted-Array/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -1275,7 +1278,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/31/Rotate-Image/" itemprop="url">Rotate Image</a></h1>
+                <a class="post-title-link" href="/2017/08/14/Merge-Sorted-Array/" itemprop="url">Merge Sorted Array</a></h1>
         
 
         <div class="post-meta">
@@ -1287,8 +1290,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-31T21:15:25+08:00">
-                2017-07-31
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-14T22:32:52+08:00">
+                2017-08-14
               </time>
             
 
@@ -1347,12 +1350,11 @@
         
           
             <hr>
-<p>You are given an <em>n</em> x <em>n</em> 2D matrix representing an image.</p>
-<p>Rotate the image by 90 degrees (clockwise).</p>
-<p>Follow up:<br>Could you do this in-place?</p>
+<p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.</p>
+<p><strong>Note:</strong><br>You may assume that <em>nums1</em> has enough space (size that is greater or equal to <em>m</em> + <em>n</em>) to hold additional elements from <em>nums2</em>. The number of elements initialized in <em>nums1</em> and <em>nums2</em> are <em>m</em> and <em>n</em> respectively.</p>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(<span class="keyword">int</span>[][] matrix)</span> </span>&#123;</div><div class="line">        <span class="comment">//1、转置矩阵</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;matrix.length; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;matrix.length;j++) &#123;</div><div class="line">                <span class="keyword">int</span> temp = matrix[i][j];</div><div class="line">                matrix[i][j] = matrix[j][i];</div><div class="line">                matrix[j][i] = temp;</div><div class="line">            &#125;</div><div class="line">        <span class="comment">//2、镜像矩阵</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;matrix.length; i++)</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;matrix.length/<span class="number">2</span>;j++) &#123;</div><div class="line">                <span class="keyword">int</span> temp = matrix[i][j];</div><div class="line">                matrix[i][j] = matrix[i][matrix.length-<span class="number">1</span>-j];</div><div class="line">                matrix[i][matrix.length-<span class="number">1</span>-j] = temp;</div><div class="line">            &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span> m, <span class="keyword">int</span>[] nums2, <span class="keyword">int</span> n)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> index = m+n-<span class="number">1</span>;</div><div class="line">        m--;n--;</div><div class="line">        <span class="keyword">while</span>(m&gt;=<span class="number">0</span>&amp;&amp;n&gt;=<span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">if</span>(nums1[m] &gt; nums2[n]) &#123;</div><div class="line">                nums1[index--] = nums1[m--];</div><div class="line">            &#125; <span class="keyword">else</span> &#123;</div><div class="line">                nums1[index--] = nums2[n--];</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">while</span>(n&gt;=<span class="number">0</span>) &#123;</div><div class="line">            nums1[index--] = nums2[n--];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1396,7 +1398,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/30/Permutations/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/13/Subsets/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -1415,7 +1417,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/30/Permutations/" itemprop="url">Permutations</a></h1>
+                <a class="post-title-link" href="/2017/08/13/Subsets/" itemprop="url">Subsets</a></h1>
         
 
         <div class="post-meta">
@@ -1427,8 +1429,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T23:45:15+08:00">
-                2017-07-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-13T23:52:10+08:00">
+                2017-08-13
               </time>
             
 
@@ -1487,12 +1489,13 @@
         
           
             <hr>
-<p>Given a collection of <strong>distinct</strong> numbers, return all possible permutations.</p>
-<p>For example,<br><code>[1,2,3]</code> have the following permutations:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [1,2,3],</div><div class="line">  [1,3,2],</div><div class="line">  [2,1,3],</div><div class="line">  [2,3,1],</div><div class="line">  [3,1,2],</div><div class="line">  [3,2,1]</div><div class="line">]</div></pre></td></tr></table></figure>
+<p>Given a set of <strong>distinct</strong> integers, <em>nums</em>, return all possible subsets.</p>
+<p><strong>Note:</strong> The solution set must not contain duplicate subsets.</p>
+<p>For example,<br>If <strong>nums</strong> = <code>[1,2,3]</code>, a solution is:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [3],</div><div class="line">  [1],</div><div class="line">  [2],</div><div class="line">  [1,2,3],</div><div class="line">  [1,3],</div><div class="line">  [2,3],</div><div class="line">  [1,2],</div><div class="line">  []</div><div class="line">]</div></pre></td></tr></table></figure>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; permute(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">        LinkedList&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> LinkedList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        result.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;());</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> n : nums) &#123;</div><div class="line">            <span class="keyword">int</span> size = result.size();</div><div class="line">            <span class="keyword">for</span>(;size&gt;<span class="number">0</span>;size--) &#123;</div><div class="line">                List&lt;Integer&gt; each = result.pollFirst();</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=each.size();i++) &#123;</div><div class="line">                    List&lt;Integer&gt; e = <span class="keyword">new</span> ArrayList&lt;Integer&gt;(each);</div><div class="line">                    e.add(i,n);</div><div class="line">                    result.add(e);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; subsets(<span class="keyword">int</span>[] nums) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        Arrays.sort(nums);</div><div class="line">        backTrack(res,<span class="keyword">new</span> ArrayList&lt;Integer&gt;(), nums, <span class="number">0</span>);</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">backTrack</span><span class="params">(List&lt;List&lt;Integer&gt;&gt; res, List&lt;Integer&gt; subset, <span class="keyword">int</span>[] nums, <span class="keyword">int</span> start)</span></span>&#123;</div><div class="line">        res.add(<span class="keyword">new</span> ArrayList&lt;Integer&gt;(subset));</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=start; i&lt;nums.length; i++) &#123;</div><div class="line">            subset.add(nums[i]);</div><div class="line">            backTrack(res, subset, nums, i+<span class="number">1</span>);</div><div class="line">            subset.remove(subset.size()-<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1536,7 +1539,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/29/Valid-Sudoku/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/12/Sort-Colors/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang">
@@ -1555,7 +1558,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/29/Valid-Sudoku/" itemprop="url">Valid Sudoku</a></h1>
+                <a class="post-title-link" href="/2017/08/12/Sort-Colors/" itemprop="url">Sort Colors</a></h1>
         
 
         <div class="post-meta">
@@ -1567,8 +1570,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-29T22:12:27+08:00">
-                2017-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-12T22:22:22+08:00">
+                2017-08-12
               </time>
             
 
@@ -1627,14 +1630,12 @@
         
           
             <hr>
-<p>Determine if a Sudoku is valid, according to: </p>
-<p>The Sudoku board could be partially filled, where empty cells are filled with the character <code>&#39;.&#39;</code>.</p>
-<p><img src="/img/leetcode_Valid_Sudoku.png" alt="img"></p>
-<p>A partially filled sudoku which is valid.</p>
-<p><strong>Note:</strong><br>A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.</p>
+<p>Given an array with <em>n</em> objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.</p>
+<p>Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.</p>
+<p><strong>Note:</strong><br>You are not suppose to use the library’s sort function for this problem.</p>
 <hr>
 <p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isValidSudoku</span><span class="params">(<span class="keyword">char</span>[][] board)</span> </span>&#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i &lt; <span class="number">9</span>; i++) &#123;</div><div class="line">            HashSet&lt;Character&gt; row = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">            HashSet&lt;Character&gt; col = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">            HashSet&lt;Character&gt; cube = <span class="keyword">new</span> HashSet&lt;Character&gt;();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j &lt; <span class="number">9</span>; j++) &#123;</div><div class="line">                <span class="keyword">if</span>(board[i][j] != <span class="string">'.'</span> &amp;&amp; !row.add(board[i][j])) </div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                <span class="keyword">if</span>(board[j][i] != <span class="string">'.'</span> &amp;&amp; !col.add(board[j][i]))</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">                <span class="comment">//cube的判断</span></div><div class="line">                <span class="keyword">int</span> cuberow = <span class="number">3</span>*(i/<span class="number">3</span>);</div><div class="line">                <span class="keyword">int</span> cubecol = <span class="number">3</span>*(i%<span class="number">3</span>);</div><div class="line">                <span class="keyword">if</span>(board[cuberow+j/<span class="number">3</span>][cubecol+j%<span class="number">3</span>]!=<span class="string">'.'</span>&amp;&amp;!cube.add(board[cuberow+j/<span class="number">3</span>][cubecol+j%<span class="number">3</span>]))</div><div class="line">                    <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortColors</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> start = <span class="number">0</span>, end = nums.length-<span class="number">1</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=end; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(nums[i] == <span class="number">0</span>) </div><div class="line">                nums[start++] = <span class="number">0</span>;</div><div class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(nums[i] == <span class="number">2</span>) &#123;</div><div class="line">                nums[i] = nums[end];</div><div class="line">                nums[end--] = <span class="number">2</span>;</div><div class="line">                i--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=start;i&lt;=end;i++)&#123;</div><div class="line">            nums[i] = <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
           
         
@@ -1673,7 +1674,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1718,7 +1719,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">54</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
