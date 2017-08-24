@@ -274,6 +274,429 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/25/Intersection-of-Two-Arrays/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/offer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is too short">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/25/Intersection-of-Two-Arrays/" itemprop="url">Intersection of Two Arrays</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-25T00:25:10+08:00">
+                2017-08-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>Given two arrays, write a function to compute their intersection.</p>
+<p><strong>Example:</strong><br>Given <em>nums1</em> = <code>[1, 2, 2, 1]</code>, <em>nums2</em> = <code>[2, 2]</code>, return <code>[2]</code>.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Each element in the result must be unique.</li>
+<li>The result can be in any order.</li>
+</ul>
+<hr>
+<p>Solution</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] intersection(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</div><div class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums1.length;i++) &#123;</div><div class="line">             <span class="keyword">if</span>(!list.contains(nums1[i])) &#123;</div><div class="line">                 list.add(nums1[i]);</div><div class="line">             &#125;</div><div class="line">        &#125;</div><div class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;nums2.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(list.contains(nums2[i]) &amp;&amp; !result.contains(nums2[i])) &#123;</div><div class="line">                result.add(nums2[i]);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span>[] re = <span class="keyword">new</span> <span class="keyword">int</span>[result.size()];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;result.size(); i++) &#123;</div><div class="line">            re[i] = result.get(i);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> re;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/Number-of-Segments-in-a-String/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/offer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is too short">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/24/Number-of-Segments-in-a-String/" itemprop="url">Number of Segments in a String</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T23:54:10+08:00">
+                2017-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>Count the number of segments in a string, where a segment is defined to be a contiguous sequence of non-space characters.</p>
+<p>Please note that the string does not contain any <strong>non-printable</strong> characters.</p>
+<p><strong>Example:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: &quot;Hello, my name is John&quot;</div><div class="line">Output: 5</div></pre></td></tr></table></figure>
+<hr>
+<p>Solution</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countSegments</span><span class="params">(String s)</span> </span>&#123;</div><div class="line">        String[] str = s.trim().split(<span class="string">" "</span>);</div><div class="line">        <span class="keyword">int</span> re = str.length;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;str.length; i++) &#123;</div><div class="line">            <span class="keyword">if</span>(<span class="string">""</span>.equals(str[i])) &#123;</div><div class="line">                re--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> re;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/Judge-Route-Circle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/offer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is too short">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/24/Judge-Route-Circle/" itemprop="url">Judge Route Circle</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-24T22:20:10+08:00">
+                2017-08-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to <strong>the original place</strong>.</p>
+<p>The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are <code>R</code> (Right), <code>L</code>(Left), <code>U</code> (Up) and <code>D</code> (down). The output should be true or false representing whether the robot makes a circle.</p>
+<p><strong>Example 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: &quot;UD&quot;</div><div class="line">Output: true</div></pre></td></tr></table></figure>
+<p><strong>Example 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Input: &quot;LL&quot;</div><div class="line">Output: false</div><div class="line">Solution</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">judgeCircle</span><span class="params">(String moves)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> x = <span class="number">0</span>, y = <span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;moves.length(); i++) &#123;</div><div class="line">            <span class="keyword">if</span>(moves.charAt(i) == <span class="string">'U'</span>) &#123;</div><div class="line">                x++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(moves.charAt(i) == <span class="string">'D'</span>) &#123;</div><div class="line">                x--;</div><div class="line">            &#125;      </div><div class="line">            <span class="keyword">if</span>(moves.charAt(i) == <span class="string">'L'</span>) &#123;</div><div class="line">                y++;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(moves.charAt(i) == <span class="string">'R'</span>) &#123;</div><div class="line">                y--;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(x==<span class="number">0</span> &amp;&amp; y==<span class="number">0</span>) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/24/Image-Smoother/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -370,146 +793,6 @@
 <hr>
 <p>Solution</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] imageSmoother(<span class="keyword">int</span>[][] M) &#123;</div><div class="line">        <span class="keyword">int</span> row = M.length;</div><div class="line">        <span class="keyword">if</span>(row == <span class="number">0</span>) <span class="keyword">return</span> M;</div><div class="line">        <span class="keyword">int</span> col = M[<span class="number">0</span>].length;</div><div class="line">        <span class="keyword">int</span>[][] R = <span class="keyword">new</span> <span class="keyword">int</span>[row][col];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;row; i++) &#123;</div><div class="line">            <span class="keyword">for</span>( <span class="keyword">int</span> j=<span class="number">0</span>; j&lt;col; j++) &#123;</div><div class="line">                <span class="keyword">int</span> temp = <span class="number">0</span>,count = <span class="number">0</span>;</div><div class="line">                <span class="keyword">if</span>(i-<span class="number">1</span>&gt;=<span class="number">0</span>) &#123;</div><div class="line">                    temp += M[i-<span class="number">1</span>][j];</div><div class="line">                    count++;</div><div class="line">                 &#125;</div><div class="line">                <span class="keyword">if</span>(i+<span class="number">1</span>&lt;row) &#123;</div><div class="line">                    temp += M[i+<span class="number">1</span>][j];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(j-<span class="number">1</span>&gt;=<span class="number">0</span>) &#123;</div><div class="line">                    temp += M[i][j-<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(j+<span class="number">1</span>&lt;col) &#123;</div><div class="line">                    temp += M[i][j+<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(i-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; j-<span class="number">1</span>&gt;=<span class="number">0</span>) &#123;</div><div class="line">                    temp += M[i-<span class="number">1</span>][j-<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(i-<span class="number">1</span>&gt;=<span class="number">0</span> &amp;&amp; j+<span class="number">1</span>&lt;col) &#123;</div><div class="line">                    temp += M[i-<span class="number">1</span>][j+<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(i+<span class="number">1</span>&lt;row &amp;&amp; j-<span class="number">1</span>&gt;=<span class="number">0</span>) &#123;</div><div class="line">                    temp += M[i+<span class="number">1</span>][j-<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(i+<span class="number">1</span>&lt;row &amp;&amp; j+<span class="number">1</span>&lt;col) &#123;</div><div class="line">                    temp += M[i+<span class="number">1</span>][j+<span class="number">1</span>];</div><div class="line">                    count++;</div><div class="line">                &#125;</div><div class="line">                R[i][j] = (temp + M[i][j]) / (count + <span class="number">1</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> R;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/Power-of-Four/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/offer.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life is too short">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/23/Power-of-Four/" itemprop="url">Power of Four</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T21:35:20+08:00">
-                2017-08-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode-easy</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.</p>
-<p>Example:<br>Given num = 16, return true. Given num = 5, return false.</p>
-<p>Follow up: Could you solve it without loops/recursion?</p>
-<p>Credits:<br>Special thanks to @yukuairoy for adding this problem and creating all test cases.</p>
-<hr>
-<p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(num &lt;= <span class="number">3</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">while</span>(num &gt; <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">if</span>((num&amp;<span class="number">1</span>) == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            num &gt;&gt;= <span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>((num&amp;<span class="number">1</span>) == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            num &gt;&gt;= <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -650,6 +933,146 @@
 <hr>
 <p>Solution</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canConstruct</span><span class="params">(String ransomNote, String magazine)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span>[] note = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</div><div class="line">        <span class="keyword">int</span>[] mag = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;ransomNote.length(); i++) &#123;</div><div class="line">            note[ransomNote.charAt(i) - <span class="string">'a'</span>]++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;magazine.length(); i++) &#123;</div><div class="line">            mag[magazine.charAt(i) - <span class="string">'a'</span>]++;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">26</span>;i++) &#123;</div><div class="line">            <span class="keyword">if</span>(note[i] &gt; mag[i]) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/23/Power-of-Four/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/offer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is too short">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/08/23/Power-of-Four/" itemprop="url">Power of Four</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-23T21:35:20+08:00">
+                2017-08-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>Given an integer (signed 32 bits), write a function to check whether it is a power of 4.</p>
+<p>Example:<br>Given num = 16, return true. Given num = 5, return false.</p>
+<p>Follow up: Could you solve it without loops/recursion?</p>
+<p>Credits:<br>Special thanks to @yukuairoy for adding this problem and creating all test cases.</p>
+<hr>
+<p>Solution</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfFour</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(num == <span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">if</span>(num &lt;= <span class="number">3</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">        <span class="keyword">while</span>(num &gt; <span class="number">1</span>) &#123;</div><div class="line">            <span class="keyword">if</span>((num&amp;<span class="number">1</span>) == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            num &gt;&gt;= <span class="number">1</span>;</div><div class="line">            <span class="keyword">if</span>((num&amp;<span class="number">1</span>) == <span class="number">1</span>) &#123;</div><div class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">            &#125;</div><div class="line">            num &gt;&gt;= <span class="number">1</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
           
         
       
@@ -1250,434 +1673,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/19/Maximum-Depth-of-Binary-Tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/offer.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life is too short">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/19/Maximum-Depth-of-Binary-Tree/" itemprop="url">Maximum Depth of Binary Tree</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-19T23:45:50+08:00">
-                2017-08-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode-easy</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>Given a binary tree, find its maximum depth.</p>
-<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
-<hr>
-<p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>+Math.max(maxDepth(root.left),maxDepth(root.right));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/18/Binary-Tree-Zigzag-Level-Order-Traversal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/offer.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life is too short">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/18/Binary-Tree-Zigzag-Level-Order-Traversal/" itemprop="url">Binary Tree Zigzag Level Order Traversal</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-18T22:35:32+08:00">
-                2017-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode-easy</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>Given a binary tree, return the <em>zigzag level order</em> traversal of its nodes’ values. (ie, from left to right, then right to left for the next level and alternate between).</p>
-<p>For example:<br>Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  3</div><div class="line"> / \</div><div class="line">9  20</div><div class="line">  /  \</div><div class="line"> 15   7</div></pre></td></tr></table></figure>
-<p>return its zigzag level order traversal as:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [3],</div><div class="line">  [20,9],</div><div class="line">  [15,7]</div><div class="line">]</div></pre></td></tr></table></figure>
-<hr>
-<p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; zigzagLevelOrder(TreeNode root) &#123;</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        LinkedList&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> res;</div><div class="line">        queue.offer(root);</div><div class="line">        <span class="keyword">boolean</span> change = <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">while</span>(!queue.isEmpty())&#123;</div><div class="line">            <span class="keyword">int</span> size = queue.size();</div><div class="line">            List&lt;Integer&gt; sub = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;size;i++)&#123;</div><div class="line">                TreeNode node = queue.poll();</div><div class="line">                <span class="keyword">if</span>(change) &#123;</div><div class="line">                    sub.add(node.val);</div><div class="line">                &#125; <span class="keyword">else</span> &#123;</div><div class="line">                    sub.add(<span class="number">0</span>,node.val);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) queue.offer(node.left);</div><div class="line">                <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>) queue.offer(node.right);</div><div class="line">            &#125;</div><div class="line">            res.add(sub);</div><div class="line">            change = !change;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/17/Binary-Tree-Level-Order-Traversal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/offer.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life is too short">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/17/Binary-Tree-Level-Order-Traversal/" itemprop="url">Binary Tree Level Order Traversal</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-17T20:52:32+08:00">
-                2017-08-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
-                    <span itemprop="name">leetcode-easy</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <hr>
-<p>Given a binary tree, return the <em>level order</em> traversal of its nodes’ values. (ie, from left to right, level by level).</p>
-<p>For example:<br>Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">  3</div><div class="line"> / \</div><div class="line">9  20</div><div class="line">  /  \</div><div class="line"> 15   7</div></pre></td></tr></table></figure>
-<p>return its level order traversal as:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  [3],</div><div class="line">  [9,20],</div><div class="line">  [15,7]</div><div class="line">]</div></pre></td></tr></table></figure>
-<hr>
-<p>Solution</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * Definition for a binary tree node.</div><div class="line"> * public class TreeNode &#123;</div><div class="line"> *     int val;</div><div class="line"> *     TreeNode left;</div><div class="line"> *     TreeNode right;</div><div class="line"> *     TreeNode(int x) &#123; val = x; &#125;</div><div class="line"> * &#125;</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; levelOrder(TreeNode root) &#123;</div><div class="line">        LinkedList&lt;TreeNode&gt; search = <span class="keyword">new</span> LinkedList&lt;TreeNode&gt;();</div><div class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();</div><div class="line">        <span class="keyword">if</span>(root==<span class="keyword">null</span>) <span class="keyword">return</span> res;</div><div class="line">        search.add(root);</div><div class="line">        <span class="keyword">while</span>(!search.isEmpty())&#123;</div><div class="line">            <span class="keyword">int</span> currentSize = search.size();</div><div class="line">            List&lt;Integer&gt; subList = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;currentSize;i++)&#123;</div><div class="line">                TreeNode node = search.poll();</div><div class="line">                subList.add(node.val);</div><div class="line">                <span class="keyword">if</span>(node.left!=<span class="keyword">null</span>) search.offer(node.left);</div><div class="line">                <span class="keyword">if</span>(node.right!=<span class="keyword">null</span>) search.offer(node.right);</div><div class="line">            &#125;</div><div class="line">            res.add(subList);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> res;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1722,7 +1722,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">59</span>
+                <span class="site-state-item-count">62</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
