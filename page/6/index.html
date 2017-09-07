@@ -274,6 +274,149 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/13/Palindrome-Number/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/offer.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Life is too short">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/13/Palindrome-Number/" itemprop="url">Palindrome Number</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-13T23:12:55+08:00">
+                2017-07-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/leetcode-easy/" itemprop="url" rel="index">
+                    <span itemprop="name">leetcode-easy</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <hr>
+<p>Determine whether an integer is a palindrome. Do this without extra space.</p>
+<p>Some hints:</p>
+<p>Could negative integers be palindromes? (ie, -1)</p>
+<p>If you are thinking of converting the integer to string, note the restriction of using extra space.</p>
+<p>You could also try reversing an integer. However, if you have solved the problem “Reverse Integer”, you know that the reversed integer might overflow. How would you handle such case?</p>
+<p>There is a more generic way of solving this problem.</p>
+<hr>
+<p>Solution</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</div><div class="line">    	<span class="keyword">if</span>(x &lt; <span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    	<span class="keyword">int</span> temp = x, res = <span class="number">0</span>;</div><div class="line">    	<span class="keyword">while</span>(temp&gt;<span class="number">0</span>) &#123;</div><div class="line">    		res = res*<span class="number">10</span> + temp%<span class="number">10</span>;</div><div class="line">    		temp = temp/<span class="number">10</span>;</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">if</span>(x != res)	</div><div class="line">    		<span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    	<span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/12/String-to-Integer-(atoi)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1547,151 +1690,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/03/Java与线程/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/offer.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Life is too short">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/03/Java与线程/" itemprop="url">Java与线程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-03T23:19:30+08:00">
-                2017-07-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java虚拟机/" itemprop="url" rel="index">
-                    <span itemprop="name">Java虚拟机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="线程的实现"><a href="#线程的实现" class="headerlink" title="线程的实现"></a>线程的实现</h3><p>​    线程是比进程更轻量级的调度执行单位，线程的引入可以把一个进程的资源分配和执行调度分开。</p>
-<p>​    对于Java的Thread类，它和大部分的API有所不同，它的所有的关键方法都试声明为Native的。</p>
-<p>​    实现线程主要有3中方式：内核线程实现、用户线程实现、用户线程＋轻量级进程混合实现</p>
-<h5 id="内核线程实现"><a href="#内核线程实现" class="headerlink" title="内核线程实现"></a>内核线程实现</h5><p>​    内核线程（Kernel-Level Thread）直接由操作系统内核支持的线程，由内核来完成线程切换。内核通过操纵调度器对线程进行调度，将线程任务映射到各个处理器上。程序一般是使用内核线程的高级接口——轻量级进程（Light-Weight Process），这才是我们通常意义上所讲的线程，LWP和KLT的的关系是1:1。</p>
-<p>​    优点：每个LWP都是一个独立的线程调度单元，不会发生阻塞</p>
-<p>​    缺点：线程操作都需要系统调用，代价昂贵，需要在用户态和内核态之间频繁切换。</p>
-<h5 id="用户线程实现"><a href="#用户线程实现" class="headerlink" title="用户线程实现"></a>用户线程实现</h5><p>​    广义上来讲，一个非内核线程即是用户线程，LWP也可以说是用户线程，但其许多操作需要进行系统调用，效率收到限制。狭义上的用户线程是完全建立在用户空间的线程库上，线程操作快速且低耗。但是线程的创建、切换和调度都是需要考虑的问题，诸如如何处理阻塞、多处理器系统中如何将线程映射到其他处理器上这些问题将会很难解决，使用用户线程实现的程序一般都比较复杂。</p>
-<h5 id="用户线程＋轻量级进程混合实现"><a href="#用户线程＋轻量级进程混合实现" class="headerlink" title="用户线程＋轻量级进程混合实现"></a>用户线程＋轻量级进程混合实现</h5><p>​    用户进程仍是完全建立在用户空间上，降低创建、切换、析构等操作的耗能，同时以轻量级进程作为用户线程和内核之间的桥梁，因此可以使用内核提供的线程调度功能和处理器映射，降低了整个进程被阻塞的危险。</p>
-<h5 id="Java线程的实现"><a href="#Java线程的实现" class="headerlink" title="Java线程的实现"></a>Java线程的实现</h5><p>​    在JDK1.2之前，是基于称为“绿色线程”的用户线程来实现的，而在JDK1.2中，线程模型替换为基于操作系统的原生线程模型。因此在目前的JDK版本中操作系统的线程模型很大程度上影响了Java虚拟机的线程映射方式。</p>
-<h3 id="Java线程调度"><a href="#Java线程调度" class="headerlink" title="Java线程调度"></a>Java线程调度</h3><h5 id="协同式调度"><a href="#协同式调度" class="headerlink" title="协同式调度"></a>协同式调度</h5><p>​    线程执行时间由线程本身来控制，线程执行完之后通知系统切换线程，实现简单，但容易造成程序阻塞。</p>
-<h5 id="抢占式线程调度"><a href="#抢占式线程调度" class="headerlink" title="抢占式线程调度"></a>抢占式线程调度</h5><p>​    每个线程由系统来分配执行时间，线程的执行时间是可控的，不会出现程序阻塞的问题。虽然线程调度是系统自动完成，但可以通过设置优先级来给某些线程多分配一点执行时间。Java语言一共设置了10哥级别的线程优先级，对于两个同时处于ready状态的线程，高优先级的线程先被执行。但是程序优先级并不是很靠谱，因为Java的线程是通过映射到系统的原生线程上来实现的，最终的线程调度还是取决于操作系统，操作系统的优先级不见得会与Java设置的优先级一一对应。对于线程优先级比Java少的系统，就会出现几个优先级相同的情况，多的话只需在中间留下一些空位即可。还有一种情况就是线程的优先级可能会被系统自行改变，例如Windows中的优先级推进器。</p>
-<h3 id="线程的状态"><a href="#线程的状态" class="headerlink" title="线程的状态"></a>线程的状态</h3><p>​    创建、等待、运行、阻塞、结束</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1741,7 +1739,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">62</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1752,7 +1750,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1763,7 +1761,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
